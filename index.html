@@ -1,39 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Message For You</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+
 <style>
   * {
     box-sizing: border-box;
   }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  height: var(--vh);
-  width: 100%;
-  font-family: 'Quicksand', sans-serif;
-  background: radial-gradient(circle at top, #2e1e42, #1a1a2e 70%);
-  overflow: hidden;
-  position: relative;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-    /* 👇 This centers the container */
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: var(--vh);
+    width: 100%;
+    font-family: 'Quicksand', sans-serif;
+    background: radial-gradient(circle at top, #2e1e42, #1a1a2e 70%);
+    overflow: hidden;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-:root {
-  --vh: 100%;
-}
 
-@media (max-width: 800px) {
   :root {
-    --vh: 100vh;
+    --vh: 100%;
   }
-}
 
+  @media (max-width: 800px) {
+    :root {
+      --vh: 100vh;
+    }
+  }
 
   /* Floating Hearts */
   .heart {
@@ -140,19 +143,20 @@ html, body {
     }
   }
 </style>
-
-<script>
-  function setVhUnit() {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh * 100}px`);
-  }
-
-  setVhUnit();
-  window.addEventListener('resize', setVhUnit);
-</script>
+</head>
 
 <body>
+  <div class="container">
+    <h1>Hi baby</h1>
+    <p>I know things can be overwhelming sometimes.</p>
+    <p>I just wanted you to know that I'm still here. I care about you <strong>baby</strong>.</p>
+    <div class="cat-container">
+      <img src="https://i.pinimg.com/originals/19/80/6e/19806e91932e6054965fc83b85241270.gif" alt="Cute cat gif" />
+    </div>
+  </div>
+
 <script>
+  // Script to create floating hearts
   const heartCount = 80; // MORE hearts!
   for (let i = 0; i < heartCount; i++) {
     const heart = document.createElement('div');
@@ -162,16 +166,15 @@ html, body {
     heart.style.animationDelay = `${Math.random() * 2}s`; // faster start
     document.body.appendChild(heart);
   }
+
+  // Script to handle mobile viewport height
+  function setVhUnit() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh * 100}px`);
+  }
+  setVhUnit();
+  window.addEventListener('resize', setVhUnit);
 </script>
 
-
-  <div class="container">
-    <h1>Hi baby</h1>
-    <p>I know things can be overwhelming sometimes.</p>
-    <p>I just wanted you to know that I'm still here. I care about you <strong>baby</strong>.</p>
-
-    <div class="cat-container">
-      <img src="https://i.pinimg.com/originals/19/80/6e/19806e91932e6054965fc83b85241270.gif" alt="Cute cat gif" />
-    </div>
-  </div>
 </body>
+</html>
