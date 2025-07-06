@@ -176,5 +176,23 @@
   window.addEventListener('resize', setVhUnit);
 </script>
 
+<audio id="relaxing-music" loop>
+  <source src="https://www.chosic.com/wp-content/uploads/2021/08/purrple-cat-equinox.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+  const backgroundMusic = document.getElementById('relaxing-music');
+  
+  // Try to play the music automatically
+  backgroundMusic.play().catch(error => {
+    // If autoplay is blocked, wait for a user interaction
+    console.log("Autoplay was blocked. Waiting for user interaction.");
+    document.body.addEventListener('click', () => {
+      backgroundMusic.play();
+    }, { once: true }); // Use { once: true } so it only tries to play on the first click
+  });
+</script>
+
 </body>
 </html>
