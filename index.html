@@ -132,8 +132,8 @@
 
   @media (max-width: 600px) {
     .container {
-      width: 80%; /* Increase width to 95% of the screen */
-      padding: 25px; /* Slightly reduce padding */
+      width: 80%; 
+      padding: 25px;
     }
     h1 {
       font-size: 1.8rem;
@@ -141,6 +141,23 @@
     p {
       font-size: 1rem;
     }
+  }
+
+  #music-button {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #caa0ff;
+    color: #caa0ff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+
+  #music-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
   }
 </style>
 </head>
@@ -153,17 +170,23 @@
     <div class="cat-container">
       <img src="https://i.pinimg.com/originals/19/80/6e/19806e91932e6054965fc83b85241270.gif" alt="Cute cat gif" />
     </div>
+    <button id="music-button">Music</button>
   </div>
+
+<audio id="relaxing-music" loop>
+  <source src="https://ia801909.us.archive.org/10/items/ZenMeditationMusicSoothingMusicRelaxingMusicMeditationZenBinauralBeats3236/Mindfulness%20Relaxing%20Music%20for%20Meditation.%20Calm%20Music%20for%20Stress%20Relief%2C%20Sleep%2C%20Massage.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
 
 <script>
   // Script to create floating hearts
-  const heartCount = 80; // MORE hearts!
+  const heartCount = 80;
   for (let i = 0; i < heartCount; i++) {
     const heart = document.createElement('div');
     heart.className = 'heart';
     heart.style.left = `${Math.random() * 100}vw`;
     heart.style.animationDuration = `${6 + Math.random() * 4}s`;
-    heart.style.animationDelay = `${Math.random() * 2}s`; // faster start
+    heart.style.animationDelay = `${Math.random() * 2}s`;
     document.body.appendChild(heart);
   }
 
@@ -174,23 +197,19 @@
   }
   setVhUnit();
   window.addEventListener('resize', setVhUnit);
-</script>
 
-<audio id="relaxing-music" loop>
-  <source src="https://www.chosic.com/wp-content/uploads/2022/02/a-promise(chosic.com).mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-
-<script>
+  // Script for the music button
+  const musicButton = document.getElementById('music-button');
   const backgroundMusic = document.getElementById('relaxing-music');
-  
-  // Try to play the music automatically
-  backgroundMusic.play().catch(error => {
-    // If autoplay is blocked, wait for a user interaction
-    console.log("Autoplay was blocked. Waiting for user interaction.");
-    document.body.addEventListener('click', () => {
+
+  musicButton.addEventListener('click', () => {
+    if (backgroundMusic.paused) {
       backgroundMusic.play();
-    }, { once: true }); // Use { once: true } so it only tries to play on the first click
+      musicButton.textContent = 'Pause';
+    } else {
+      backgroundMusic.pause();
+      musicButton.textContent = 'Music';
+    }
   });
 </script>
 
