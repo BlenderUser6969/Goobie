@@ -1,30 +1,85 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>goobie.se <3</title>
+/* This sets the cute font we imported from Google for the whole page */
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    
+    /* This is our dark theme background color. Easy on the eyes! */
+    background-color: #1E1E1E; 
 
-    <link rel="stylesheet" href="style.css">
+    /* A soft white for the text color */
+    color: #E0E0E0;
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
+    /* These next lines center the content perfectly in the middle of the screen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Make the body take up the full screen height */
+}
 
-    <div class="marquee-container">
-        <div class="marquee-text">
-            haiii goobie you are my favorite little goober !!! I love you so much &hearts; &hearts; &hearts; haiii goobie you are my favorite little goober !!! I love you so much &hearts; &hearts; &hearts; 
-        </div>
-    </div>
+/* --- Scrolling Text Bar --- */
 
-    <main class="content">
-        <h1>goobie.se</h1>
-        <p>a very important website for my favorite person.</p>
-        
-        <a href="/pleb/" class="pleb-button">to the pleb zone</a>
-    </main>
+.marquee-container {
+    position: fixed; /* Fixes the bar to the top of the screen */
+    top: 0;
+    width: 100%;
+    background-color: #FF8DC7; /* Our cute pink color! */
+    color: #1E1E1E; /* Dark text for contrast */
+    padding: 10px 0;
+    overflow: hidden; /* Hides the text when it's off-screen */
+    white-space: nowrap; /* Prevents the text from wrapping to a new line */
+}
 
-</body>
-</html>
+.marquee-text {
+    display: inline-block;
+    padding-left: 100%; /* Starts the text off-screen to the right */
+    animation: scroll-left 25s linear infinite; /* This applies our animation */
+}
+
+/* This is the animation code! It moves the text from right to left */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* --- Main Content Styling --- */
+
+.content {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 4rem; /* Makes the title big and bold */
+    margin-bottom: 0;
+    /* This adds a subtle pink glow to the main title */
+    text-shadow: 0 0 8px rgba(255, 141, 199, 0.7); 
+}
+
+p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #B0B0B0; /* A slightly dimmer color for the subtitle */
+}
+
+/* --- Button Styling --- */
+
+.pleb-button {
+    display: inline-block;
+    margin-top: 40px; /* Pushes the button down a bit */
+    padding: 15px 30px;
+    background-color: #FF8DC7; /* Same pink as the top bar */
+    color: #1E1E1E; /* Dark text */
+    text-decoration: none; /* Removes the default blue underline from the link */
+    font-weight: bold;
+    border-radius: 50px; /* Makes the button a cute pill shape */
+    transition: transform 0.2s ease-out; /* Adds a smooth animation for the hover effect */
+}
+
+/* This makes the button pop out a little when you hover over it */
+.pleb-button:hover {
+    transform: scale(1.1);
+}
