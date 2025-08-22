@@ -1,85 +1,61 @@
-/* This sets the cute font we imported from Google for the whole page */
-body {
-    font-family: 'Nunito', sans-serif;
-    margin: 0;
-    
-    /* This is our dark theme background color. Easy on the eyes! */
-    background-color: #1E1E1E; 
+/* --- New Kitten Gallery Style --- */
+/* Add this to the bottom of your style.css file */
 
-    /* A soft white for the text color */
-    color: #E0E0E0;
-
-    /* These next lines center the content perfectly in the middle of the screen */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh; /* Make the body take up the full screen height */
-}
-
-/* --- Scrolling Text Bar --- */
-
-.marquee-container {
-    position: fixed; /* Fixes the bar to the top of the screen */
-    top: 0;
+.kitten-gallery {
     width: 100%;
-    background-color: #FF8DC7; /* Our cute pink color! */
-    color: #1E1E1E; /* Dark text for contrast */
-    padding: 10px 0;
-    overflow: hidden; /* Hides the text when it's off-screen */
-    white-space: nowrap; /* Prevents the text from wrapping to a new line */
-}
-
-.marquee-text {
-    display: inline-block;
-    padding-left: 100%; /* Starts the text off-screen to the right */
-    animation: scroll-left 25s linear infinite; /* This applies our animation */
-}
-
-/* This is the animation code! It moves the text from right to left */
-@keyframes scroll-left {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
-/* --- Main Content Styling --- */
-
-.content {
+    max-width: 600px;
+    margin: 40px auto; /* Adds space above and below */
     text-align: center;
-    padding: 20px;
 }
 
-h1 {
-    font-size: 4rem; /* Makes the title big and bold */
-    margin-bottom: 0;
-    /* This adds a subtle pink glow to the main title */
-    text-shadow: 0 0 8px rgba(255, 141, 199, 0.7); 
+.kitten-gallery h2 {
+    font-weight: 700;
+    color: #ccc;
+    margin-bottom: 20px;
 }
 
-p {
-    font-size: 1.2rem;
-    margin-top: 10px;
-    color: #B0B0B0; /* A slightly dimmer color for the subtitle */
+.kitten-gallery .image-grid {
+    /* This creates the responsive grid */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px; /* This is the space between the pictures */
 }
 
-/* --- Button Styling --- */
+.kitten-gallery img {
+    /* This styles the images themselves */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Prevents images from stretching */
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border: 2px solid #444;
+}/* --- New Scrolling Paw Background --- */
+/* Add this to the bottom of your style.css file */
 
-.pleb-button {
-    display: inline-block;
-    margin-top: 40px; /* Pushes the button down a bit */
-    padding: 15px 30px;
-    background-color: #FF8DC7; /* Same pink as the top bar */
-    color: #1E1E1E; /* Dark text */
-    text-decoration: none; /* Removes the default blue underline from the link */
-    font-weight: bold;
-    border-radius: 50px; /* Makes the button a cute pill shape */
-    transition: transform 0.2s ease-out; /* Adds a smooth animation for the hover effect */
+body::before {
+    content: '';
+    position: fixed; /* Stays in place even when you scroll */
+    top: 0;
+    left: 0;
+    width: 200%; /* Makes the canvas larger for smooth scrolling */
+    height: 200%;
+    z-index: -1; /* Puts it BEHIND all your content */
+    opacity: 0.04; /* Very, very soft and subtle */
+
+    /* This is an SVG of a paw print, used as a repeating background */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23FFFFFF' d='M256 64c-35.3 0-64 28.7-64 64s28.7 64 64 64s64-28.7 64-64s-28.7-64-64-64zm128 160c-35.3 0-64 28.7-64 64s28.7 64 64 64s64-28.7 64-64s-28.7-64-64-64zM64 224c-35.3 0-64 28.7-64 64s28.7 64 64 64s64-28.7 64-64s-28.7-64-64-64zm320 96c-35.3 0-64 28.7-64 64s28.7 64 64 64s64-28.7 64-64s-28.7-64-64-64zM160 352c-35.3 0-64 28.7-64 64s28.7 64 64 64s64-28.7 64-64s-28.7-64-64-64z'/%3E%3C/svg%3E");
+    background-size: 200px 200px; /* The size of each repeating paw area */
+
+    /* This applies our scrolling animation */
+    animation: scrollPaws 30s linear infinite;
 }
 
-/* This makes the button pop out a little when you hover over it */
-.pleb-button:hover {
-    transform: scale(1.1);
+/* This defines the animation itself */
+@keyframes scrollPaws {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(-50%, -50%); /* Scrolls the background diagonally */
+    }
 }
