@@ -1,16 +1,84 @@
-<div class="note-box">
-            <p>Remember that time we...? Just thinking about it and smiling.</p>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>hi</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #fdfafa;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 40px;
+      position: relative;
+      overflow-x: hidden;
+    }
 
-        <div class="kitten-gallery">
-            <h2>A little something to make you smile...</h2>
-            
-            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdWd2eG56Z2t2b2t4d2x1aW55cnZzOGJ0eHJkMWFmcjI0dXVjaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o72F6YGzaJj42nNf2/giphy.gif" alt="A kitten playing">
-            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGs3YXc1NXd4eWNiaDdtaWRpNXN1eDNucnI1ODg1c243aWV2YWN3cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MDJ9IbxxvDUQM/giphy.gif" alt="A kitten cuddling a teddy bear">
-            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExajFwb2VkbHBpZ3ZwbjFwYzYxYnJpc2F6ZHZkaGV2dTRsYTVkZXp0eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jpbnoe3UIa8bS/giphy.gif" alt="A box full of kittens">
-            
-        </div>
-        <a href="https://<your-github-username>.github.io/king-of-the-hill-timer/" class="pleb-button" target="_blank">
-            For our next adventure?
-        </a>
+    /* Soft paw background */
+    .paw {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      background: url('https://i.imgur.com/k3N2bDY.png') no-repeat center/contain;
+      opacity: 0.1;
+      animation: floatPaw 20s linear infinite;
+    }
 
+    @keyframes floatPaw {
+      from {
+        transform: translateY(100vh) rotate(0deg);
+      }
+      to {
+        transform: translateY(-120vh) rotate(360deg);
+      }
+    }
+
+    .cat-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 15px;
+      width: 90%;
+      max-width: 500px;
+    }
+
+    .cat-gallery img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .cat-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .tiny-text {
+      margin-top: 15px;
+      font-size: 0.85rem;
+      color: #8b8b8b;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating paw (you can duplicate this div to have more paws drifting) -->
+  <div class="paw" style="left:10%; animation-delay: 0s;"></div>
+  <div class="paw" style="left:50%; animation-delay: 5s;"></div>
+  <div class="paw" style="left:80%; animation-delay: 10s;"></div>
+
+  <!-- Cute cat gallery -->
+  <div class="cat-gallery">
+    <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Cat gif 1">
+    <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="Cat gif 2">
+    <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="Cat gif 3">
+    <img src="https://media.giphy.com/media/VbnUQpnihPSIgIXuZv/giphy.gif" alt="Cat gif 4">
+  </div>
+
+  <!-- Soft, quiet note -->
+  <div class="tiny-text">🐾 hi.</div>
+</body>
+</html>
