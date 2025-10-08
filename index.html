@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Little Something For You</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="hearts-container">
-        </div>
+    <div class="hearts-container"></div>
 
     <div class="card">
         <h1>This video is cute like you...</h1>
@@ -23,15 +22,33 @@
             I love you more than words can say sweetie. I'm not mad, or upset, just worried <3
         </p>
 
-        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@chriswayne.linkin/video/7555448829068315959" data-video-id="7555448829068315959" style="max-width: 605px; min-width: 325px;">
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@chriswayne.linkin/video/7555448829068315959" 
+            data-video-id="7555448829068315959" 
+            style="max-width: 605px; min-width: 325px;">
             <section>
                 <a target="_blank" title="@chriswayne.linkin" href="https://www.tiktok.com/@chriswayne.linkin?refer=embed">@chriswayne.linkin</a>
                 <p>Check out this new video!</p> 
                 <a target="_blank" title="♬ original sound - chriswayne.linkin" href="https://www.tiktok.com/music/original-sound-7555448829068315959?refer=embed">♬ original sound - chriswayne.linkin</a>
             </section>
         </blockquote>
+
         <script async src="https://www.tiktok.com/embed.js"></script>
     </div>
+
+    <script>
+        const heartsContainer = document.querySelector('.hearts-container');
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (4 + Math.random() * 3) + 's';
+            heartsContainer.appendChild(heart);
+            setTimeout(() => heart.remove(), 7000);
+        }
+
+        setInterval(createHeart, 400);
+    </script>
 
 </body>
 </html>
