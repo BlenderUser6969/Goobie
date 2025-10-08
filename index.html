@@ -1,84 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>hi</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #fdfafa;
-      font-family: "Segoe UI", Tahoma, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 40px;
-      position: relative;
-      overflow-x: hidden;
-    }
-
-    /* Soft paw background */
-    .paw {
-      position: absolute;
-      width: 80px;
-      height: 80px;
-      background: url('https://static.vecteezy.com/system/resources/previews/027/209/347/non_2x/cute-cat-paw-all-white-free-png.png') no-repeat center/contain;
-      opacity: 0.2;
-      animation: floatPaw 15s linear infinite;
-    }
-
-    @keyframes floatPaw {
-      from {
-        transform: translateY(100vh) rotate(0deg);
-      }
-      to {
-        transform: translateY(-120vh) rotate(360deg);
-      }
-    }
-
-    .cat-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 15px;
-      width: 90%;
-      max-width: 500px;
-    }
-
-    .cat-gallery img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-      transition: transform 0.3s ease;
-    }
-
-    .cat-gallery img:hover {
-      transform: scale(1.05);
-    }
-
-    .tiny-text {
-      margin-top: 15px;
-      font-size: 0.85rem;
-      color: #8b8b8b;
-      letter-spacing: 0.5px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I love you sweetie...</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Floating paw (you can duplicate this div to have more paws drifting) -->
-  <div class="paw" style="left:10%; animation-delay: 0s;"></div>
-  <div class="paw" style="left:50%; animation-delay: 5s;"></div>
-  <div class="paw" style="left:80%; animation-delay: 10s;"></div>
 
-  <!-- Cute cat gallery -->
-  <div class="cat-gallery">
-    <img src="https://i.gifer.com/MXD6.gif" alt="Cat gif 1">
-    <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="Cat gif 2">
-    <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="Cat gif 3">
-    <img src="https://i.imgur.com/z4z67Ur.gif" alt="Cat gif 4">
-  </div>
+    <div class="card">
+        <h1>This video reminded me of you cutie...</h1>
 
-  <!-- Soft, quiet note -->
-  <div class="tiny-text">🐾 us :3</div>
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@lovelymimi865/video/7308779687982238977" data-video-id="7308779687982238977" style="max-width: 605px; min-width: 325px;">
+            <section>
+                <a target="_blank" title="@lovelymimi865" href="https://www.tiktok.com/@lovelymimi865?refer=embed">@lovelymimi865</a>
+                <p></p>
+                <a target="_blank" title="♬ original sound - Lovelymimi" href="https://www.tiktok.com/music/original-sound-7308779713175391006?refer=embed">♬ original sound - Lovelymimi</a>
+            </section>
+        </blockquote>
+        <script async src="https://www.tiktok.com/embed.js"></script>
+    </div>
+
 </body>
 </html>
