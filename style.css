@@ -1,9 +1,9 @@
 /* 1. Global Styles and Dark Mode Base */
 :root {
-    --dark-bg: #1a1a2e; /* Dark, deep blue/purple */
+    --dark-bg: #1a1a2e; /* The dark background color */
     --card-bg: rgba(255, 255, 255, 0.1); /* Semi-transparent white for glass effect */
     --border-color: rgba(255, 255, 255, 0.2); /* Light border */
-    --text-color: #ffffff;
+    --text-color: #ffffff; /* White text for contrast */
     --heart-color: #e94560; /* A nice red/pink for hearts */
 }
 
@@ -11,27 +11,29 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Quicksand', sans-serif;
+    /* Sets the background to a dark color */
     background-color: var(--dark-bg);
+    /* Sets all default text to white */
     color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    overflow: hidden; /* Hide scrollbars caused by the heart animation */
+    overflow: hidden; 
 }
 
-/* 2. Glassmorphism Card Style */
+/* 2. Glassmorphism Card Style (Dark Card on Dark Background) */
 .card {
     background: var(--card-bg);
     border-radius: 20px;
     border: 1px solid var(--border-color);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6); /* Darker shadow for depth */
     backdrop-filter: blur(10px); /* The key to the glass effect */
     -webkit-backdrop-filter: blur(10px);
     padding: 40px;
     max-width: 650px;
     text-align: center;
-    z-index: 10; /* Ensures the card is above the background hearts */
+    z-index: 10;
     animation: fadeIn 1.5s ease-out;
 }
 
@@ -52,12 +54,10 @@ h1 {
     font-weight: 500;
     margin-bottom: 30px;
     padding: 10px 0;
-    color: var(--heart-color); /* Makes the message stand out */
+    color: var(--heart-color);
 }
 
-/* 3. Scrolling Hearts Background */
-
-/* Container for the hearts, covers the whole viewport */
+/* 3. Scrolling Hearts Background (Dark and Subtle) */
 .hearts-container {
     position: fixed;
     top: 0;
@@ -65,11 +65,11 @@ h1 {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    pointer-events: none; /* Allows clicks to pass through to the content */
-    z-index: 1; /* Keeps the hearts behind the card */
+    pointer-events: none;
+    z-index: 1;
 }
 
-/* Create 50 hearts using a loop-like structure with CSS */
+/* Pattern background for the hearts effect */
 .hearts-container::before {
     content: '';
     position: absolute;
@@ -79,12 +79,10 @@ h1 {
     height: 100%;
     background: 
         radial-gradient(var(--heart-color) 15%, transparent 16%) 0 0,
-        radial-gradient(var(--heart-color) 15%, transparent 16%) 10px 10px,
-        rgba(255, 255, 255, 0.05) /* Optional light texture */
-    ;
-    background-size: 20px 20px; /* Controls the density of the pattern */
-    opacity: 0.15; /* Makes the hearts subtle */
-    animation: moveHearts 40s linear infinite; /* Animation for scrolling */
+        radial-gradient(var(--heart-color) 15%, transparent 16%) 10px 10px;
+    background-size: 20px 20px;
+    opacity: 0.15; /* Keeps the hearts subtle on the dark background */
+    animation: moveHearts 40s linear infinite;
 }
 
 @keyframes moveHearts {
@@ -92,7 +90,6 @@ h1 {
         transform: translate(0, 0);
     }
     to {
-        /* Scrolls diagonally down and right */
         transform: translate(20px, 20px); 
     }
 }
