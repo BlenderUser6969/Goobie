@@ -373,12 +373,22 @@ body {
 /* Mobile optimizations */
 @media (max-width: 480px) {
     .content {
-        padding: 30px 20px;
-        border-radius: 25px;
+        padding: 25px 20px;
+        border-radius: 20px;
+        max-width: 80%;
+        backdrop-filter: blur(15px) saturate(160%);
+        -webkit-backdrop-filter: blur(15px) saturate(160%);
+        background: rgba(255, 192, 203, 0.06);
     }
     
     .title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+    
+    .heart {
+        font-size: 2.2rem;
+        margin: 10px 0;
     }
     
     .kitten-gif {
@@ -389,34 +399,26 @@ body {
     }
     
     .message {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        margin: 12px 0;
+        line-height: 1.5;
     }
     
     .kitten-emoji {
-        font-size: 1.2rem;
-        letter-spacing: 2px;
-        margin-top: 20px;
+        font-size: 1.3rem !important;
+        letter-spacing: 2px !important;
+        margin-top: 42px !important;
+        padding: 0 5px !important;
+        line-height: 1.4 !important;
+        top: 2px !important;
+        position: relative !important;
     }
     
     .note-paper {
-        width: 90%;
-        max-width: 300px;
-        height: 72px;
-        margin: -70px auto 0;
-        transform: rotate(-4deg);
-    }
-    
-    .note-paper::after {
-        background-image: 
-            /* Red margin line on the left */
-            linear-gradient(to right, rgba(255, 100, 100, 0.4) 0%, rgba(255, 100, 100, 0.4) 1%, transparent 1%),
-            /* Horizontal notebook lines - scaled for mobile */
-            repeating-linear-gradient(180deg, 
-                transparent 0%, 
-                transparent 18px, 
-                rgba(0, 0, 0, 0.08) 18px, 
-                rgba(0, 0, 0, 0.08) 19px
-            );
+        width: 240px !important;
+        height: 100px !important;
+        margin: -80px auto 0 !important;
+        max-width: none !important;
     }
 }
 
