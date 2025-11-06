@@ -393,14 +393,30 @@ body {
     }
     
     .kitten-emoji {
-        font-size: 1.4rem;
-        letter-spacing: 3px;
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+        margin-top: 20px;
     }
     
     .note-paper {
-        width: 150px;
-        height: 140px;
-        margin: -130px auto 0;
+        width: 90%;
+        max-width: 300px;
+        height: 72px;
+        margin: -70px auto 0;
+        transform: rotate(-4deg);
+    }
+    
+    .note-paper::after {
+        background-image: 
+            /* Red margin line on the left */
+            linear-gradient(to right, rgba(255, 100, 100, 0.4) 0%, rgba(255, 100, 100, 0.4) 1%, transparent 1%),
+            /* Horizontal notebook lines - scaled for mobile */
+            repeating-linear-gradient(180deg, 
+                transparent 0%, 
+                transparent 18px, 
+                rgba(0, 0, 0, 0.08) 18px, 
+                rgba(0, 0, 0, 0.08) 19px
+            );
     }
 }
 
