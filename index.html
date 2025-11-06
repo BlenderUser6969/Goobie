@@ -3,52 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Little Something For You</title>
-
+    <title>For My Love 💕</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Indie+Flower&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <div class="hearts-container"></div>
-
-    <div class="card">
-        <h1>This video is cute like you...</h1>
-
-        <p class="personal-message">
-            I love you more than words can say sweetie. I'm not mad, or upset, just worried <3
-        </p>
-
-        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@chriswayne.linkin/video/7555448829068315959" 
-            data-video-id="7555448829068315959" 
-            style="max-width: 605px; min-width: 325px;">
-            <section>
-                <a target="_blank" title="@chriswayne.linkin" href="https://www.tiktok.com/@chriswayne.linkin?refer=embed">@chriswayne.linkin</a>
-                <p>Check out this new video!</p> 
-                <a target="_blank" title="♬ original sound - chriswayne.linkin" href="https://www.tiktok.com/music/original-sound-7555448829068315959?refer=embed">♬ original sound - chriswayne.linkin</a>
-            </section>
-        </blockquote>
-
-        <script async src="https://www.tiktok.com/embed.js"></script>
+    <div class="kitten-background">
+        <!-- Kitten gifs will be dynamically added here -->
     </div>
-
+    
+    <div class="glass-container">
+        <div class="content">
+            <h1 class="title">Baby boy...</h1>
+            <div class="heart">>O<</div>
+            <p class="message">
+                I love you so much sweetie... I'm so sorry that it's been rough these past few days.
+                But I really do love you baby... I can't wait to see you again, whenever that is...
+            </p>
+            <p class="message">
+                I found a bunch of silly gifs last night... The 5th of November!!
+                They remind me of you... Cuz your adorable and cute! :3
+            </p>
+            <div class="kitten-emoji">MAOWWWW >o< mew.. >w< That's you btw..</div>
+            <div class="note-paper"></div>
+        </div>
+        <img src="https://alta-d-e.com/wp-content/uploads/2018/03/pencil-tip-1.png" alt="Pencil" class="pencil">
+    </div>
+    
     <script>
-        const heartsContainer = document.querySelector('.hearts-container');
-
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart');
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = (4 + Math.random() * 3) + 's';
-            heartsContainer.appendChild(heart);
-            setTimeout(() => heart.remove(), 7000);
+        // Kitten GIFs - verified kitten images only from reliable sources
+        const kittenUrls = [
+            'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3eTJlYmJrY3l5bnVjazNrbGQzODAwYTY2OTN5MGdxdWt2cm9tZzIzNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3GRwYzxwdceaI/giphy.gif', // Baby kitten
+            'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdmNqaDd4NzUyaXY2aTEyaDdhZW92dGtxaGVmM200dzFlaTBibjdzcCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/11b3nBQPnAoAJG/giphy.gif', // Kitten
+            'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdmNqaDd4NzUyaXY2aTEyaDdhZW92dGtxaGVmM200dzFlaTBibjdzcCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/BurFOUYMtmZ6mNhYAN/giphy.gif', // Kitten
+            'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3dHF5Nmt0eGo2ZWppN2xobHB3MHcwdGtmc25yYm9zM2E0ajFkcDBxeCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ZnDQ6rL0wr9Ha/giphy.gif', // Kitten
+            'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3MzQ4dGt3OG1yMm14Yng3eDB5MmpxeDljdzR4ZTRlY2VreTJodWJ6byZlcD12MV9naWZzX3NlYXJjaCZjdD1n/AwxI2OHb9Qfmw/giphy.gif', // Kitten
+            'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3dHF5Nmt0eGo2ZWppN2xobHB3MHcwdGtmc25yYm9zM2E0ajFkcDBxeCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/KFnBqOjW7jHS5LsytX/giphy.gif', // Kitten
+            'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3bnljd3lybTNwbm1sdzBhdnY4ODA2eGFmbTB1Zmc2M24wMHdjZjEzeiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/13fWTqjpu5L8t2/giphy.gif', // Kitten
+            'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3cnd3eHFmbXhiODNmY2xocmR0dWdzMTJjcmIwbWV2emdjenIyZW1lYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/cm5rMOvv7ZpHYlk1Wz/giphy.gif', // Kitten
+            'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3cnd3eHFmbXhiODNmY2xocmR0dWdzMTJjcmIwbWV2emdjenIyZW1lYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/4ECyI8cllDvAqbtTQG/giphy.gif', // Kitten
+            'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3cnd3eHFmbXhiODNmY2xocmR0dWdzMTJjcmIwbWV2emdjenIyZW1lYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/O7vcE31hEv8A0/giphy.gif', // Kitten
+            'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZHIyNXg3YXlkYWlqdmNzaXp2NWt5NTlqczloaXhodGQ2bjV4Z2FpMSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/SVlKRhAgd5bBLemzfX/giphy.gif', // Kitten
+            'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZmxhcGFsaHdjMnJ0YWhyeGwzd2czczdoNGJyc253cmwyb2IwYmUzOSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/AnR9AERmzSh4XcWbqg/giphy.gif' // Kitten
+        ];
+        
+        const backgroundContainer = document.querySelector('.kitten-background');
+        
+        // Create rows of kittens to fill entire background
+        // Adjust number of kittens per row based on screen size
+        const isMobile = window.innerWidth <= 480;
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+        
+        const kittenSize = isMobile ? 130 : 180;
+        const spacing = isMobile ? 15 : 20;
+        
+        // Calculate how many kittens fit per row to fill the width
+        const kittensPerRow = Math.ceil(viewportWidth / (kittenSize + spacing)) + 1;
+        
+        // Calculate how many rows fit in viewport height
+        const rowsInViewport = Math.ceil(viewportHeight / (kittenSize + spacing));
+        
+        // Create enough rows to fill viewport and extend beyond for seamless scroll
+        for (let row = 0; row < rowsInViewport * 2; row++) {
+            for (let col = 0; col < kittensPerRow; col++) {
+                const kittenImg = document.createElement('img');
+                // Randomly select a kitten GIF instead of cycling through them
+                const randomIndex = Math.floor(Math.random() * kittenUrls.length);
+                kittenImg.src = kittenUrls[randomIndex];
+                kittenImg.className = 'kitten-gif';
+                kittenImg.alt = 'Cute kitten';
+                
+                // Calculate position for row layout
+                const left = (col * (kittenSize + spacing)) + spacing;
+                const top = (row * (kittenSize + spacing)) + spacing;
+                
+                kittenImg.style.left = left + 'px';
+                kittenImg.style.top = top + 'px';
+                kittenImg.style.width = kittenSize + 'px';
+                kittenImg.style.height = kittenSize + 'px';
+                
+                backgroundContainer.appendChild(kittenImg);
+            }
         }
-
-        setInterval(createHeart, 400);
     </script>
-
 </body>
 </html>
